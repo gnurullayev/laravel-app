@@ -1,0 +1,182 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel audit",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/documents": {
+            "get": {
+                "tags": [
+                    "Documents"
+                ],
+                "summary": "list of documents",
+                "description": "Returns a list of items",
+                "operationId": "b673934ac05f4e281a47caac41b482fa",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "example": 1
+                                            },
+                                            "document_name": {
+                                                "type": "string",
+                                                "example": "Item document_name"
+                                            },
+                                            "created_at": {
+                                                "type": "string",
+                                                "example": "2022-01-12T13:11:59.000000Z"
+                                            },
+                                            "field_count": {
+                                                "type": "integer",
+                                                "example": "3"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            }
+        },
+        "/api/v1/document/{id}": {
+            "get": {
+                "tags": [
+                    "Documents"
+                ],
+                "summary": "document",
+                "description": "Returns a document",
+                "operationId": "b8cec9bf34968e89fc16f984eda469d3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Document id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "Item Name"
+                                        },
+                                        "content": {
+                                            "type": "string",
+                                            "example": "Item Description"
+                                        },
+                                        "price": {
+                                            "type": "integer",
+                                            "example": "100"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            }
+        },
+        "/api/v1/document/create": {
+            "post": {
+                "tags": [
+                    "Documents"
+                ],
+                "summary": "new document",
+                "operationId": "a738068d90cd09fee0dcefaf3ca1eae8",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "price"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Apple"
+                                    },
+                                    "content": {
+                                        "type": "string",
+                                        "example": "this id good fruit"
+                                    },
+                                    "price": {
+                                        "type": "integer",
+                                        "example": "3000"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful create document"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "headers": {
+            "Accept": {
+                "description": "Accept header",
+                "schema": {
+                    "type": "string",
+                    "default": "application/json",
+                    "enum": [
+                        "application/json"
+                    ]
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    }
+}
