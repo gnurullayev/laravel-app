@@ -164,7 +164,7 @@ class DocumentController extends Controller
         $form_values = $request->form_values;
 
         foreach ($form_values as $value) {
-            $document->documentConfigurations()->create([
+            $document->configurations()->create([
                 'field_seq' => $value["field_seq"],
                 'is_mandatory' => $value["is_mandatory"],
                 'field_type' => $value["field_type"],

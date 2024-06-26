@@ -18,7 +18,7 @@ class DocumentResource extends JsonResource
             "id" => $this->id,
             "document_name" => $this->document_name,
             "created_at" => $this->created_at,
-            "field_count" => $this->documentConfigurations()->count()
+            "field_count" => $this->configurations()->count()
         ];
     }
 }
