@@ -2,10 +2,9 @@
 
 ## Requirements
 
-1. PHP 8.1
+1. PHP 8.2
 2. MySql
 3. Composer
-4. Redis 
 
 ## Installation
 
@@ -23,11 +22,8 @@
 ### Premium Partners
 
 - **[darkaonline/l5-swagger](https://github.com/DarkaOnLine/L5-Swagger)**
-- **[guzzlehttp/guzzle](https://packagist.org/packages/guzzlehttp/guzzle)**
 - **[laravel/framework](https://laravel.com/)**
-- **[laravel/horizon](https://laravel.com/docs/11.x/horizon)**
+- **[laravel/tinker](https://github.com/laravel/tinker)**
 - **[laravel/jetstream](https://jetstream.laravel.com/)**
 - **[laravel/sanctum](https://laravel.com/docs/11.x/sanctum)**
-- **[nwidart/laravel-modules](https://github.com/nWidart/laravel-modules)**
-- **[pbmedia/laravel-ffmpeg](https://packagist.org/packages/pbmedia/laravel-ffmpeg)**
 
